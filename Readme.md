@@ -2,6 +2,8 @@
 
 Set the language fallback type via page field.
 
+![pagefield](https://github.com/networkteam/pagelanguage/raw/master/Documentation/Images/pagefield-fallbacktype.png "New field in page translation")
+
 Before TYPO3 9.5 Site Handling it was possible to use something like
 
 ```
@@ -12,17 +14,4 @@ Before TYPO3 9.5 Site Handling it was possible to use something like
 [global]
 ```
 
-to have an individual language handling.
-
-Now it's unfortunately done globally in site language configuration
-
-```
-languages:
-    -
-        title: de-DE
-        fallbackType: fallback
-        languageId: '1'
-        ...
-```
-
-See also https://forge.typo3.org/issues/86712
+to have an individual language handling. See also https://forge.typo3.org/issues/86712

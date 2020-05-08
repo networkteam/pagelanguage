@@ -33,7 +33,6 @@ class LanguageFallbacktypeResolver implements MiddlewareInterface
         if ($language->getLanguageId() > 0) {
             $pageId = $this->getRequestedPageId($request);
             if ($pageId && $pageId > 0) {
-
                 $fallbackType = $this->getFallbackType($pageId, $language->getLanguageId());
                 if (!empty($fallbackType)) {
                     $language = $this->setLanguageFallback($language, $fallbackType);
