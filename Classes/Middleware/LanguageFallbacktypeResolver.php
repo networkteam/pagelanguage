@@ -10,7 +10,6 @@ use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Routing\PageArguments;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
  * Set language fallback type by page field.
@@ -27,16 +26,6 @@ use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
  */
 class LanguageFallbacktypeResolver implements MiddlewareInterface
 {
-    /**
-     * @var TypoScriptFrontendController
-     */
-    protected $controller;
-
-    public function __construct(TypoScriptFrontendController $controller = null)
-    {
-        $this->controller = $controller ?? $GLOBALS['TSFE'];
-    }
-
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         /** @var SiteLanguage $language */
