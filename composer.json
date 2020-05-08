@@ -2,6 +2,10 @@
   "name": "networkteam/pagelanguage",
   "type": "typo3-cms-extension",
   "description": "Set the language fallbackType via page field",
+  "homepage": "https://networkteam.com",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
   "keywords": [
     "TYPO3",
     "extension",
