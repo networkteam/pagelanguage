@@ -60,10 +60,12 @@ class LanguageFallbacktypeResolver implements MiddlewareInterface
     {
         $site = $request->getAttribute('site');
         $previousResult = $request->getAttribute('routing', null);
-        $pageArguments = $site->getRouter()->matchRequest($request, $previousResult);
-        if ($pageArguments instanceof PageArguments) {
-            return $pageArguments->getPageId();
-        }
+        try {
+            $pageArguments = $site->getRouter()->matchRequest($request, $previousResult);
+            if ($pageArguments instanceof PageArguments) {
+                return $pageArguments->getPageId();
+            }
+        } catch (\Throwable $exception) {}
     }
 
     protected function getFallbackType(int $pageId, int $language)
