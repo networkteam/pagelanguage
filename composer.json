@@ -21,9 +21,6 @@
       "Networkteam\\Pagelanguage\\": "Classes"
     }
   },
-  "replace": {
-    "networkteam/pagelanguage": "self.version"
-  },
   "extra": {
     "typo3/cms": {
       "extension-key": "pagelanguage"
