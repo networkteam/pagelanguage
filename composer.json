@@ -14,7 +14,7 @@
     "middleware"
   ],
   "require": {
-    "typo3/cms-core": "^9.5 || ^10.4"
+    "typo3/cms-core": "^9.5 || ^10.4 || ^11.5"
   },
   "autoload": {
     "psr-4": {
