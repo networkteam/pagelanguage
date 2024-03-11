@@ -10,6 +10,7 @@ use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Routing\PageArguments;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 
 /**
  * Set language fallback type by page field.
@@ -72,6 +73,9 @@ class LanguageFallbacktypeResolver implements MiddlewareInterface
     {
         /** @var QueryBuilder $queryBuilder */
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        $queryBuilder
+            ->getRestrictions()
+            ->removeByType(HiddenRestriction::class);
         $rows = $queryBuilder
             ->select('fallbackType')
             ->from('pages')
